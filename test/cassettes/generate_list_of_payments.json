@@ -16,14 +16,14 @@
       "binary": false,
       "body": "{\"has_more\":false,\"data\":[{\"id\":\"pay_ztUeZrBB7kcc18F4LZq5oQC4\",\"type\":\"payment\",\"attributes\":{\"access_url\":null,\"amount\":10000,\"billing\":null,\"currency\":\"PHP\",\"description\":null,\"external_reference_number\":\"\",\"fee\":1850,\"livemode\":false,\"net_amount\":8150,\"payout\":null,\"source\":{\"id\":\"card_TUsTuHVj6fhdui8dDSsDyVMJ\",\"type\":\"card\"},\"statement_descriptor\":null,\"status\":\"paid\",\"created_at\":1585917408,\"paid_at\":1585917408,\"updated_at\":1585917408}},{\"id\":\"pay_ycVmHCX8qFPjuymZHZXpsKwm\",\"type\":\"payment\",\"attributes\":{\"access_url\":null,\"amount\":10000,\"billing\":null,\"currency\":\"PHP\",\"description\":null,\"external_reference_number\":\"\",\"fee\":1850,\"livemode\":false,\"net_amount\":8150,\"payout\":null,\"source\":{\"id\":\"card_WLhaujNdn9NxJtL6PUNWYmXb\",\"type\":\"card\"},\"statement_descriptor\":null,\"status\":\"paid\",\"created_at\":1585916970,\"paid_at\":1585916970,\"updated_at\":1585916970}}]}",
       "headers": {
-        "Date": "Fri, 10 Apr 2020 13:10:00 GMT",
+        "Date": "Fri, 10 Apr 2020 13:45:29 GMT",
         "Content-Type": "application/json; charset=utf-8",
         "Transfer-Encoding": "chunked",
         "Connection": "keep-alive",
         "Server": "nginx",
         "Vary": "Accept-Encoding",
         "Cache-Control": "max-age=0, private, must-revalidate",
-        "X-Runtime": "0.013866"
+        "X-Runtime": "0.025382"
       },
       "status_code": 200,
       "type": "ok"

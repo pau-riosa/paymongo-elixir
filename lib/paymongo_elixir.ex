@@ -17,17 +17,20 @@ defmodule PaymongoElixir do
   end
 
   @doc """
-  generate list of payments
-  iex> list(:list_payments)
+  Generates list of payments
+
+  Pass an argument of `:list_payments` to generate the lists.
+
+  iex> PaymongoElixir.list(:list_payments)
   iex> [
-    %{"data" => 
-      %{
+    %{
+      "data" => %{
         "id" => id,
         "type" => "payment",
         "attributes" => %{
           ...
           "status" => "paid"
-        } 
+        }
       }
     }
   ]

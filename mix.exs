@@ -1,6 +1,8 @@
 defmodule PaymongoElixir.MixProject do
   use Mix.Project
 
+  @project_url "https://github.com/pau-riosa/paymongo-elixir.git"
+
   def project do
     [
       app: :paymongo_elixir,
@@ -9,11 +11,22 @@ defmodule PaymongoElixir.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Paymongo Elixir",
-      source_url: "https://github.com/pau-riosa/paymongo-elixir.git",
+      source_url: @project_url,
+      homepage_url: @project_url,
+      description: "API Integration for Paymongo",
+      package: package(),
       docs: [
-        main: "Paymongo Elixir",
+        main: "readme",
         extras: ["README.md"]
       ]
+    ]
+  end
+
+  defp package do
+    [
+      maintainers: ["Jethro Riosa"],
+      licenses: ["MIT"],
+      links: %{"Github" => @project_url}
     ]
   end
 

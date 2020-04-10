@@ -21,10 +21,12 @@ defmodule PaymongoElixir do
 
   Pass an argument of `:list_payments` to generate the lists.
 
+  ## Examples
+
   iex> PaymongoElixir.list(:list_payments)
-  iex> [
-    %{
-      "data" => %{
+  %{
+    "data" => [
+      %{
         "id" => id,
         "type" => "payment",
         "attributes" => %{
@@ -32,8 +34,10 @@ defmodule PaymongoElixir do
           "status" => "paid"
         }
       }
-    }
-  ]
+    ]
+  }
+
+
   """
   def list(request) do
     with {:ok, %HTTPoison.Response{} = data} <- request(request),

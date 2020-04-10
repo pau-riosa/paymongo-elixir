@@ -42,6 +42,7 @@ defmodule PaymongoElixir.MixProject do
   defp deps do
     [
       {:jason, "~> 1.2"},
+      {:exvcr, "~> 0.11", only: :test},
       {:ex_doc, "~> 0.21", only: :dev, runtime: false},
       {:httpoison, "~> 1.6.2"}
     ]

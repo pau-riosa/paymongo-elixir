@@ -28,21 +28,20 @@ defmodule PaymongoElixir do
 
   ## Examples
 
-  iex> PaymongoElixir.list(:list_payments)
-  %{
-    "data" => [
+      iex> PaymongoElixir.list(:list_payments)
       %{
-        "id" => id,
-        "type" => "payment",
-        "attributes" => %{
-          ...
-          "status" => "paid"
-        }
+        "data" => [
+          %{
+            "id" => id,
+            "type" => "payment",
+            "attributes" => %{
+              ...
+              "status" => "paid"
+            }
+          }
+        ]
       }
-    ]
-  }
-
-
+      
   """
   def list(request) do
     with {:ok, %HTTPoison.Response{} = data} <- request(request),
@@ -65,83 +64,80 @@ defmodule PaymongoElixir do
 
   Pass argument request and id
 
-  request can be 
+  request can be: 
 
-  `:retrieve_payment` retrieves a payment + `id` with format `pay_123`
-  `:retrieve_payment_intent` retrieves a payment intent + `id` with format `pi_123`
-  `:retrieve_payment_method` retrieves a payment method + `id` with format `pm_123`
+    * `:retrieve_payment` retrieves a payment + `id` with format `pay_123`
+    * `:retrieve_payment_intent` retrieves a payment intent + `id` with format `pi_123`
+    * `:retrieve_payment_method` retrieves a payment method + `id` with format `pm_123`
 
   if none of the above request was called, an `{:error, :request_not_found}` will be returned.
 
-  ## Example
-  # retrieve a payment
+  ## Example: retrieve a payment
 
-  iex> id = "pay_123"
-  iex> PaymongoElixir.get(:retrieve_payment, id)
-  %{
-    "data" => %{
-      "id" => pay_id,
-      "type" => "payment",
-      "attributes" => %{
-        "status" => "paid"
-        ...
-      }
-    }
-  } 
+      iex> id = "pay_123"
+      iex> PaymongoElixir.get(:retrieve_payment, id)
+      %{
+        "data" => %{
+          "id" => pay_id,
+          "type" => "payment",
+          "attributes" => %{
+            "status" => "paid"
+            ...
+          }
+        }
+      } 
 
-  ## Example
-  # retrieve a payment intent
+  ## Example: retrieve a payment intent
 
-  iex> id = "pi_123"
-  iex> PaymongoElixir.get(:retrieve_payment_intent, id)
-  %{
-    "data" => %{
-      "id" => payment_intent_id, 
-      "type" => "payment_intent",
-      "attributes" => %{
-        "amount" => 10000,
-        "currency" => "PHP",
-        "description" => nil,
-        "statement_descriptor" => nil,
-        "status" => "awaiting_payment_method",
-        "livemode" => false,
-        "client_key" => _client_key,
-        "created_at" => _created_at,
-        "updated_at" => _updated_at,
-        "last_payment_error" => nil,
-        "payment_method_allowed" => ["card"],
-        "payment_method_options" => %{
-          "card" => %{"request_three_d_secure" => "automatic"}
-        },
-        "payments" => [],
-        "next_action" => nil,
-        "metadata" => nil
-      }
-    }
-  } 
+      iex> id = "pi_123"
+      iex> PaymongoElixir.get(:retrieve_payment_intent, id)
+      %{
+        "data" => %{
+          "id" => payment_intent_id, 
+          "type" => "payment_intent",
+          "attributes" => %{
+            "amount" => 10000,
+            "currency" => "PHP",
+            "description" => nil,
+            "statement_descriptor" => nil,
+            "status" => "awaiting_payment_method",
+            "livemode" => false,
+            "client_key" => _client_key,
+            "created_at" => _created_at,
+            "updated_at" => _updated_at,
+            "last_payment_error" => nil,
+            "payment_method_allowed" => ["card"],
+            "payment_method_options" => %{
+              "card" => %{"request_three_d_secure" => "automatic"}
+            },
+            "payments" => [],
+            "next_action" => nil,
+            "metadata" => nil
+          }
+        }
+      } 
 
-  ## Example
-  # retrieve a payment method 
+  ## Example: retrieve payment method
 
-  iex> id = "pm_123"
-  iex> PaymongoElixir.get(:retrieve_payment_method, id)
-  %{
-    "data" => %{
-      "id" => payment_method_id,
-      "type" => "payment_method",
-      "attributes" => %{
-        "livemode" => false,
-        "type" => "card",
-        "billing" => nil,
-        "details" => %{
-          "last4" => "4345",
-          "exp_month" => 12,
-          "exp_year" => 2030,
-          "cvc" => "123"
+      iex> id = "pm_123"
+      iex> PaymongoElixir.get(:retrieve_payment_method, id)
+      %{
+        "data" => %{
+          "id" => payment_method_id,
+          "type" => "payment_method",
+          "attributes" => %{
+            "livemode" => false,
+            "type" => "card",
+            "billing" => nil,
+            "details" => %{
+              "last4" => "4345",
+              "exp_month" => 12,
+              "exp_year" => 2030,
+              "cvc" => "123"
+            }
+          }
         }
       }
-    }
-  }
 
   """
   def get(request, id) do

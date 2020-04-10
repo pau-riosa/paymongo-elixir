@@ -16,6 +16,22 @@ defmodule PaymongoElixir do
     end
   end
 
+  @doc """
+  generate list of payments
+  iex> list(:list_payments)
+  iex> [
+    %{"data" => 
+      %{
+        "id" => id,
+        "type" => "payment",
+        "attributes" => %{
+          ...
+          "status" => "paid"
+        } 
+      }
+    }
+  ]
+  """
   def list(request) do
     with {:ok, %HTTPoison.Response{} = data} <- request(request),
          %{"data" => _data} = data <- Jason.decode!(data.body) do

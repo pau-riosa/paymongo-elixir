@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"redirect\":{\"failed\":\"https://account.syd.localhost:4001/gcash\",\"success\":\"https://account.syd.localhost:4001/gcash\"},\"type\":\"gcash\"}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/sources"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"src_ihKnvjXw5FoSPv8Q4sGdUy2h\",\"type\":\"source\",\"attributes\":{\"amount\":10000,\"billing\":null,\"currency\":\"PHP\",\"livemode\":false,\"redirect\":{\"checkout_url\":\"https://test-sources.paymongo.com/sources?id=src_ihKnvjXw5FoSPv8Q4sGdUy2h\",\"failed\":\"https://account.syd.localhost:4001/gcash\",\"success\":\"https://account.syd.localhost:4001/gcash\"},\"status\":\"pending\",\"type\":\"gcash\",\"created_at\":1586576574}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:42:54 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.042085"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

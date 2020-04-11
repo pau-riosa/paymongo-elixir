@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"details\":{\"card_number\":\"4343434343434345\",\"cvc\":\"123\",\"exp_month\":12,\"exp_year\":2030},\"type\":\"card\"}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payment_methods"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pm_AFMDXnhdg1aMWrmUD27oiXmM\",\"type\":\"payment_method\",\"attributes\":{\"livemode\":false,\"type\":\"card\",\"billing\":null,\"created_at\":1586576191,\"updated_at\":1586576191,\"details\":{\"last4\":\"4345\",\"exp_month\":12,\"exp_year\":2030,\"cvc\":\"123\"},\"metadata\":null}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:36:31 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.070344"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

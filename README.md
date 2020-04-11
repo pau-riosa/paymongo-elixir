@@ -5,11 +5,11 @@
 ```elixir
 def deps do
   [
-    {:paymongo_elixir, "~> 0.1.0"}
+    {:paymongo_elixir, "~> 1.1.0"}
   ]
 end
 ```
-Documentation can be found at [https://hexdocs.pm/paymongo_elixir](https://hexdocs.pm/paymongo_elixir).
+Documentation can be found at [https://hexdocs.pm/paymongo_elixir](https://hexdocs.pm/paymongo_elixir/readme.html).
 
 ## Development
 

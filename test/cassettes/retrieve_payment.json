@@ -1,0 +1,122 @@
+[
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"payment_method_allowed\":[\"card\"]}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payment_intents"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pi_BTA4CG1NKU5CVKHq9LkXwB2k\",\"type\":\"payment_intent\",\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"description\":null,\"statement_descriptor\":null,\"status\":\"awaiting_payment_method\",\"livemode\":false,\"client_key\":\"pi_BTA4CG1NKU5CVKHq9LkXwB2k_client_dvQ5C5LwqsjKqBTZuYeER1gn\",\"created_at\":1586576536,\"updated_at\":1586576536,\"last_payment_error\":null,\"payment_method_allowed\":[\"card\"],\"payments\":[],\"next_action\":null,\"payment_method_options\":{\"card\":{\"request_three_d_secure\":\"automatic\"}},\"metadata\":null}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:42:16 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.042434"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"details\":{\"card_number\":\"4343434343434345\",\"cvc\":\"123\",\"exp_month\":12,\"exp_year\":2030},\"type\":\"card\"}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payment_methods"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pm_QKSTgAmuJStLvBWJh14TAi4c\",\"type\":\"payment_method\",\"attributes\":{\"livemode\":false,\"type\":\"card\",\"billing\":null,\"created_at\":1586576536,\"updated_at\":1586576536,\"details\":{\"last4\":\"4345\",\"exp_month\":12,\"exp_year\":2030,\"cvc\":\"123\"},\"metadata\":null}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:42:16 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.084761"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"payment_method\":\"pm_QKSTgAmuJStLvBWJh14TAi4c\"}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payment_intents/pi_BTA4CG1NKU5CVKHq9LkXwB2k/attach?client_key=pi_BTA4CG1NKU5CVKHq9LkXwB2k_client_dvQ5C5LwqsjKqBTZuYeER1gn"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pi_BTA4CG1NKU5CVKHq9LkXwB2k\",\"type\":\"payment_intent\",\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"description\":null,\"statement_descriptor\":null,\"status\":\"succeeded\",\"livemode\":false,\"client_key\":\"pi_BTA4CG1NKU5CVKHq9LkXwB2k_client_dvQ5C5LwqsjKqBTZuYeER1gn\",\"created_at\":1586576536,\"updated_at\":1586576536,\"last_payment_error\":null,\"payment_method_allowed\":[\"card\"],\"payments\":[{\"id\":\"pay_EE4vb993hNaKUJjtx5gkQpfc\",\"type\":\"payment\",\"attributes\":{\"access_url\":null,\"amount\":10000,\"billing\":null,\"currency\":\"PHP\",\"description\":null,\"external_reference_number\":\"\",\"fee\":1850,\"livemode\":false,\"net_amount\":8150,\"payout\":null,\"source\":{\"id\":\"card_cmV1d3jLeZ4b4GdzsrJAm4dW\",\"type\":\"card\"},\"statement_descriptor\":null,\"status\":\"paid\",\"created_at\":1586576536,\"paid_at\":1586576536,\"updated_at\":1586576536}}],\"next_action\":null,\"payment_method_options\":{\"card\":{\"request_three_d_secure\":\"automatic\"}},\"metadata\":null}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:42:16 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.191899"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payments/pay_EE4vb993hNaKUJjtx5gkQpfc"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pay_EE4vb993hNaKUJjtx5gkQpfc\",\"type\":\"payment\",\"attributes\":{\"access_url\":null,\"amount\":10000,\"billing\":null,\"currency\":\"PHP\",\"description\":null,\"external_reference_number\":\"\",\"fee\":1850,\"livemode\":false,\"net_amount\":8150,\"payout\":null,\"source\":{\"id\":\"card_cmV1d3jLeZ4b4GdzsrJAm4dW\",\"type\":\"card\"},\"statement_descriptor\":null,\"status\":\"paid\",\"created_at\":1586576536,\"paid_at\":1586576536,\"updated_at\":1586576536}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:42:16 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.011355"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

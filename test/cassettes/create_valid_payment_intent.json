@@ -1,0 +1,32 @@
+[
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"payment_method_allowed\":[\"card\"]}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payment_intents"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pi_ix8SfwV2rnGs8wdfLtsV11JR\",\"type\":\"payment_intent\",\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"description\":null,\"statement_descriptor\":null,\"status\":\"awaiting_payment_method\",\"livemode\":false,\"client_key\":\"pi_ix8SfwV2rnGs8wdfLtsV11JR_client_bA9TXcenPQueauz65pV7gF1f\",\"created_at\":1586576311,\"updated_at\":1586576311,\"last_payment_error\":null,\"payment_method_allowed\":[\"card\"],\"payments\":[],\"next_action\":null,\"payment_method_options\":{\"card\":{\"request_three_d_secure\":\"automatic\"}},\"metadata\":null}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:38:31 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.047649"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

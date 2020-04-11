@@ -1,0 +1,92 @@
+[
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"payment_method_allowed\":[\"card\"]}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payment_intents"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pi_QptzDKNSiwc2UDhTQ4vwo7PW\",\"type\":\"payment_intent\",\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"description\":null,\"statement_descriptor\":null,\"status\":\"awaiting_payment_method\",\"livemode\":false,\"client_key\":\"pi_QptzDKNSiwc2UDhTQ4vwo7PW_client_nijsd1B7snEW7VeDXNJJfVU9\",\"created_at\":1586576515,\"updated_at\":1586576515,\"last_payment_error\":null,\"payment_method_allowed\":[\"card\"],\"payments\":[],\"next_action\":null,\"payment_method_options\":{\"card\":{\"request_three_d_secure\":\"automatic\"}},\"metadata\":null}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:41:55 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.051369"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"details\":{\"card_number\":\"4343434343434345\",\"cvc\":\"123\",\"exp_month\":12,\"exp_year\":2030},\"type\":\"card\"}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payment_methods"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pm_a26qHvCcBhDDwxL7H2yQ9qkW\",\"type\":\"payment_method\",\"attributes\":{\"livemode\":false,\"type\":\"card\",\"billing\":null,\"created_at\":1586576516,\"updated_at\":1586576516,\"details\":{\"last4\":\"4345\",\"exp_month\":12,\"exp_year\":2030,\"cvc\":\"123\"},\"metadata\":null}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:41:56 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.060163"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  },
+  {
+    "request": {
+      "body": "{\"data\":{\"attributes\":{\"payment_method\":\"pm_a26qHvCcBhDDwxL7H2yQ9qkW\"}}}",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json",
+        "authorization": "***"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.paymongo.com/v1/payment_intents/pi_QptzDKNSiwc2UDhTQ4vwo7PW/attach?client_key=pi_QptzDKNSiwc2UDhTQ4vwo7PW_client_nijsd1B7snEW7VeDXNJJfVU9"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"data\":{\"id\":\"pi_QptzDKNSiwc2UDhTQ4vwo7PW\",\"type\":\"payment_intent\",\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"description\":null,\"statement_descriptor\":null,\"status\":\"succeeded\",\"livemode\":false,\"client_key\":\"pi_QptzDKNSiwc2UDhTQ4vwo7PW_client_nijsd1B7snEW7VeDXNJJfVU9\",\"created_at\":1586576515,\"updated_at\":1586576516,\"last_payment_error\":null,\"payment_method_allowed\":[\"card\"],\"payments\":[{\"id\":\"pay_b9rJedmBbtzxco35WCXRjQnZ\",\"type\":\"payment\",\"attributes\":{\"access_url\":null,\"amount\":10000,\"billing\":null,\"currency\":\"PHP\",\"description\":null,\"external_reference_number\":\"\",\"fee\":1850,\"livemode\":false,\"net_amount\":8150,\"payout\":null,\"source\":{\"id\":\"card_k1wuXkR4c6p88zHMRYKsPWuA\",\"type\":\"card\"},\"statement_descriptor\":null,\"status\":\"paid\",\"created_at\":1586576516,\"paid_at\":1586576516,\"updated_at\":1586576516}}],\"next_action\":null,\"payment_method_options\":{\"card\":{\"request_three_d_secure\":\"automatic\"}},\"metadata\":null}}}",
+      "headers": {
+        "Date": "Sat, 11 Apr 2020 03:41:56 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Transfer-Encoding": "chunked",
+        "Connection": "keep-alive",
+        "Server": "nginx",
+        "Vary": "Accept-Encoding",
+        "Cache-Control": "max-age=0, private, must-revalidate",
+        "X-Runtime": "0.114366"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]

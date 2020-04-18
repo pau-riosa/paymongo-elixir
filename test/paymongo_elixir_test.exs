@@ -1,6 +1,5 @@
 defmodule PaymongoElixirTest do
   use ExUnit.Case, async: true
-  doctest PaymongoElixir
   use ExVCR.Mock, adapter: ExVCR.Adapter.Hackney
 
   @grab_pay_valid_test_params %{
@@ -10,8 +9,8 @@ defmodule PaymongoElixirTest do
         "amount" => 10_000,
         "currency" => "PHP",
         "redirect" => %{
-          "success" => "https://account.syd.localhost:4001/gcash",
-          "failed" => "https://account.syd.localhost:4001/gcash"
+          "success" => "https://localhost:4001/gcash",
+          "failed" => "https://localhost:4001/gcash"
         }
       }
     }
@@ -24,8 +23,8 @@ defmodule PaymongoElixirTest do
         "amount" => 10_000,
         "currency" => "PHP",
         "redirect" => %{
-          "success" => "https://account.syd.localhost:4001/gcash",
-          "failed" => "https://account.syd.localhost:4001/gcash"
+          "success" => "https://localhost:4001/gcash",
+          "failed" => "https://localhost:4001/gcash"
         }
       }
     }
@@ -147,8 +146,8 @@ defmodule PaymongoElixirTest do
                      "currency" => "PHP",
                      "livemode" => false,
                      "redirect" => %{
-                       "success" => "https://account.syd.localhost:4001/gcash",
-                       "failed" => "https://account.syd.localhost:4001/gcash"
+                       "success" => "https://localhost:4001/gcash",
+                       "failed" => "https://localhost:4001/gcash"
                      },
                      "status" => "pending",
                      "type" => "gcash",
@@ -171,8 +170,8 @@ defmodule PaymongoElixirTest do
                      "currency" => "PHP",
                      "livemode" => false,
                      "redirect" => %{
-                       "success" => "https://account.syd.localhost:4001/gcash",
-                       "failed" => "https://account.syd.localhost:4001/gcash"
+                       "success" => "https://localhost:4001/gcash",
+                       "failed" => "https://localhost:4001/gcash"
                      },
                      "status" => "pending",
                      "type" => "grab_pay",

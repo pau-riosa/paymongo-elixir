@@ -12,11 +12,11 @@ defmodule PaymongoElixir do
 
   defmacro __using__(opts) do
     otp_app = Keyword.get(opts, :otp_app)
-    client_id = Application.get_env(otp_app, :client_id)
+    client_key = Application.get_env(otp_app, :client_key)
     client_secret = Application.get_env(otp_app, :client_secret)
 
-    quote bind_quoted: [client_id: client_id, client_secret: client_secret] do
-      Application.put_env(:paymongo_elixir, :client_id, client_id)
+    quote bind_quoted: [client_key: client_key, client_secret: client_secret] do
+      Application.put_env(:paymongo_elixir, :client_key, client_key)
       Application.put_env(:paymongo_elixir, :client_secret, client_secret)
     end
   end
@@ -166,8 +166,8 @@ defmodule PaymongoElixir do
       ...>             "amount" => 10_000,
       ...>             "currency" => "PHP",
       ...>             "redirect" => %{
-      ...>               "success" => "https://account.syd.localhost:4001/gcash",
-      ...>               "failed" => "https://account.syd.localhost:4001/gcash"
+      ...>               "success" => "https://localhost:4001/gcash",
+      ...>               "failed" => "https://localhost:4001/gcash"
       ...>             }
       ...>           }
       ...>         }
@@ -183,8 +183,8 @@ defmodule PaymongoElixir do
             "currency" => "PHP",
             "livemode" => false,
             "redirect" => %{
-              "success" => "https://example.com/gcash",
-              "failed" => "https://example.com/gcash"
+              "success" => "https://localhost:4001/gcash",
+              "failed" => "https://localhost:4001/gcash"
             },
             "status" => "pending",
             "type" => "gcash"
@@ -370,8 +370,8 @@ defmodule PaymongoElixir do
       {:error, :request_not_found} ->
         {:error, :request_not_found}
 
-      _ ->
-        {:error, :invalid_transaction}
+      errors ->
+        raise errors
     end
   end
 
@@ -448,16 +448,28 @@ defmodule PaymongoElixir do
   end
 
   defp public_key_base64 do
-    Base.encode64(
-      Application.get_env(:paymongo_elixir, :client_key) <>
-        ":"
-    )
+    if Application.get_env(:paymongo_elixir, :client_key) do
+      Base.encode64(
+        Application.get_env(:paymongo_elixir, :client_key) <>
+          ":"
+      )
+    else
+      raise """
+      setup your client key in your test or dev config
+      """
+    end
   end
 
   defp secret_key_base64 do
-    Base.encode64(
-      Application.get_env(:paymongo_elixir, :client_secret) <>
-        ":"
-    )
+    if Application.get_env(:paymongo_elixir, :client_secret) do
+      Base.encode64(
+        Application.get_env(:paymongo_elixir, :client_secret) <>
+          ":"
+      )
+    else
+      raise """
+      setup your client secret in your test or dev config
+      """
+    end
   end
 end

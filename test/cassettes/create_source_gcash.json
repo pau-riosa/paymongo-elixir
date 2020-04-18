@@ -1,7 +1,7 @@
 [
   {
     "request": {
-      "body": "{\"data\":{\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"redirect\":{\"failed\":\"https://account.syd.localhost:4001/gcash\",\"success\":\"https://account.syd.localhost:4001/gcash\"},\"type\":\"gcash\"}}}",
+      "body": "{\"data\":{\"attributes\":{\"amount\":10000,\"currency\":\"PHP\",\"redirect\":{\"failed\":\"https://localhost:4001/gcash\",\"success\":\"https://localhost:4001/gcash\"},\"type\":\"gcash\"}}}",
       "headers": {
         "accept": "application/json",
         "content-type": "application/json",
@@ -14,7 +14,7 @@
     },
     "response": {
       "binary": false,
-      "body": "{\"data\":{\"id\":\"src_ihKnvjXw5FoSPv8Q4sGdUy2h\",\"type\":\"source\",\"attributes\":{\"amount\":10000,\"billing\":null,\"currency\":\"PHP\",\"livemode\":false,\"redirect\":{\"checkout_url\":\"https://test-sources.paymongo.com/sources?id=src_ihKnvjXw5FoSPv8Q4sGdUy2h\",\"failed\":\"https://account.syd.localhost:4001/gcash\",\"success\":\"https://account.syd.localhost:4001/gcash\"},\"status\":\"pending\",\"type\":\"gcash\",\"created_at\":1586576574}}}",
+      "body": "{\"data\":{\"id\":\"src_ihKnvjXw5FoSPv8Q4sGdUy2h\",\"type\":\"source\",\"attributes\":{\"amount\":10000,\"billing\":null,\"currency\":\"PHP\",\"livemode\":false,\"redirect\":{\"checkout_url\":\"https://test-sources.paymongo.com/sources?id=src_ihKnvjXw5FoSPv8Q4sGdUy2h\",\"failed\":\"https://localhost:4001/gcash\",\"success\":\"https://localhost:4001/gcash\"},\"status\":\"pending\",\"type\":\"gcash\",\"created_at\":1586576574}}}",
       "headers": {
         "Date": "Sat, 11 Apr 2020 03:42:54 GMT",
         "Content-Type": "application/json; charset=utf-8",

@@ -6,14 +6,14 @@ defmodule PaymongoElixir.MixProject do
   def project do
     [
       app: :paymongo_elixir,
-      version: "1.1.0",
+      version: "1.2.0",
       elixir: "~> 1.5",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       name: "Paymongo Elixir",
       source_url: @project_url,
       homepage_url: @project_url,
-      description: "API Integration for Paymongo",
+      description: "Unofficial API Integration for Paymongo",
       package: package(),
       docs: [
         main: "readme",
